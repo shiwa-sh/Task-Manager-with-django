@@ -1,0 +1,11 @@
+{% extends 'tasks/base.html' %}
+{% block content %}
+    <div class="card col-md-5 d-flex justify-content-center" style="right: 50px">
+        <div class="card-title">{{ task.title }}</div>
+        <div class="card-body">
+            <div>{{ task.description }}</div>
+            <div>due to :{{ task.due_date }}</div>
+            </div>
+
+    </div>
+{% endblock content %}
