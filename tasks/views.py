@@ -14,6 +14,7 @@ class CreatTaskView(CreateView):
     model = Task
     fields = ['title', 'description', 'due_date', 'all_tasks']
     template_name = 'tasks/new_task.html'
+    success_url = reverse_lazy('task-list')
 
 
 class DetailTaskView(DetailView):
@@ -24,11 +25,12 @@ class UpdateTaskView(UpdateView):
     model = Task
     fields = ['title', 'description', 'due_date', 'all_tasks']
     template_name_suffix = "_update_form"
+    success_url = reverse_lazy('task-list')
 
 
 class DeleteTaskView(DeleteView):
     model = Task
-    success_url = 'task-list'
+    success_url = reverse_lazy('task-list')
 # def new_task(req):
 #     tasks = Task.objects.all()
 #     if req.method == ['POST']:
